@@ -43,7 +43,7 @@ def predict_selling_price(year, fuel_type, present_price, kms_driven, seller_typ
     #print(df)
     #scaler = StandardScaler()
 
-    df_scaled = scaler.transform(df) #applying the StandardScaler on the data
+    df_scaled = scaler.transform(df)  # applying the StandardScaler on the data
     #print(df_scaled)
 
     prediction = rf_model.predict(df_scaled)
@@ -53,7 +53,8 @@ def predict_selling_price(year, fuel_type, present_price, kms_driven, seller_typ
 
 
 def main():
-    st.title("Car price predictor app")
+    st.title("Car price predictor app")  # title of the streamlit app
+    # heading of the streamlit app, the text-color will be white and background color will be blue
     html_temp = """
     <div style = "background-color:blue;padding: 10px">
     <h2 style = "color: white;text-align: center;">Streamlit car predictor ML app </h2>
@@ -75,7 +76,7 @@ def main():
                                               owner)
 
     if selling_price >= 0:
-        st.success("The selling price of the car is {}".format(selling_price))
+        st.success("The selling price of the car is {} lakhs".format(selling_price))
     #st.stop()
 
 
